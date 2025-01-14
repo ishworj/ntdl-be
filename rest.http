@@ -1,0 +1,48 @@
+// tasks API
+// CREATE TASK
+@rooturl=http://localhost:5000/api/v1
+@taskEp= {{rooturl}}/tasks
+POST {{taskEp}}
+Content-Type: application/json
+
+{
+    "task": "codingguru",
+    "hr" : 10,
+    "type" : "entry"
+}
+
+
+###
+// READING TASK
+GET {{taskEp}}
+
+###
+
+// READING TASK
+GET {{taskEp}}/67847d95471e5949c22abc99
+
+###
+
+// UPDATE TASK
+PUT {{taskEp}}/67847d95471e5949c22abc9bfl
+Content-Type: application/json
+
+{
+    "task": "dfting",
+    "hr" : 10,
+    "type" : "entry"
+}
+###
+
+// UPDATE TASK
+PATCH {{taskEp}}/1
+Content-Type: application/json
+
+{
+    "type": "bad"
+}
+
+
+###
+// DELETING TASK
+DELETE {{taskEp}}/67847d95471e5949c22a
