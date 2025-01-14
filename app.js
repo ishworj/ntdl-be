@@ -1,14 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config();
 
 const app = express();
 
 // allow cors 
 app.use(cors())
 
-const PORT = 5000;
-mongoose.connect("mongodb://localhost:27017/NTDL-DB").then(()=>{
+const PORT = process.env.PORT;
+mongoose.connect(process.env.MONGO_URL).then(()=>{
   app.listen(PORT, () => {
     console.log("SERVER STARTED",PORT);
   });
